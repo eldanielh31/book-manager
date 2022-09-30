@@ -97,7 +97,7 @@ const Book = () => {
                 </div>
             </div>
             <div className='infoContainerBook'>
-                <img src={data.url} className="imageUpdate"/>
+                <img src={data.url} className="imageUpdate" alt='imagen libro'/>
                 <h1>
                     {data.title}
                 </h1>
