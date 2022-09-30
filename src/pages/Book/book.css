@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&display=swap');
+
+.containerBook {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Alkalami', serif;
+    
+}
+
+.headerUpdate{
+    font-weight: 50;
+    font-style: normal;
+    font-size: 50px;
+}
+
+.updateContainerBook {
+    width: 70%;
+    height: 100vh;
+    /* background-color: green; */
+    text-align: center;
+}
+
+.containerWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.infoContainerBook {
+    width: 30%;
+    height: 100vh;
+    padding: 30px;
+    border: rgb(0, 0, 0) solid 1px;
+    border-radius: 2%;
+    margin: 50px;
+    box-shadow: rgba( 241, 196, 15 , 0.4) 5px 5px, rgba(241, 196, 15, 0.3) 10px 10px, rgba(241, 196, 15, 0.2) 15px 15px, rgba(241, 196, 15, 0.1) 20px 20px, rgba(241, 196, 15, 0.05) 25px 25px;
+}
+
+.formUpdateBook {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.inputFieldUpdate{
+    width: 75%;
+}
+
+.inputUpdate {
+    font-size: 20px;
+    margin: 1em;
+}
+
+.wrapperFormUpdate {
+    width: 40%;
+    background-color:rgba( 241, 196, 15 );
+    padding: 1em;
+    border-radius: 5%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+/* CSS */
+.button-28 {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 50%;
+    will-change: transform;
+}
+
+.button-28:disabled {
+    pointer-events: none;
+}
+
+.button-28:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.button-28:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
