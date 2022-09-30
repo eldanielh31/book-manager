@@ -1,121 +1,27 @@
 import React, { useState } from 'react'
+import { useLocation } from 'react-router-dom';
 
 import './book.css'
 
 const Book = () => {
 
-    // const data = [
-    //     {
-    //         "id": 1,
-    //         "title": "The text",
-    //         "description": "texto descriptivo de the wanderer",
-    //         "url": "https://edit.org/images/cat/portadas-libros-big-2019101610.jpg",
-    //         "year": 2022,
-    //         "available": 1,
-    //         "author_id": 1,
-    //         "created_at": "2022-09-30T02:32:48.000000Z",
-    //         "updated_at": "2022-09-30T03:47:54.000000Z"
-    //     },
-    //     {
-    //         "id": 2,
-    //         "title": "Daniel dot com",
-    //         "description": "texto descriptivo de the wanderer",
-    //         "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Portada-libro.jpg",
-    //         "year": 2022,
-    //         "available": 1,
-    //         "author_id": 2,
-    //         "created_at": "2022-09-30T02:33:19.000000Z",
-    //         "updated_at": "2022-09-30T02:33:19.000000Z"
-    //     },
-    //     {
-    //         "id": 3,
-    //         "title": "Souron's Eye",
-    //         "description": "texto descriptivo de the eye of sauron",
-    //         "url": "https://template.canva.com/EADtutwov_Q/1/0/256w-nJr37FPJeZs.jpg",
-    //         "year": 2020,
-    //         "available": 1,
-    //         "author_id": 1,
-    //         "created_at": "2022-09-30T02:34:32.000000Z",
-    //         "updated_at": "2022-09-30T02:34:32.000000Z"
-    //     },
-    //     {
-    //         "id": 4,
-    //         "title": "Souron's Eye Sequel",
-    //         "description": "texto descriptivo de the eye of sauron",
-    //         "url": "https://www.adobe.com/es/express/create/cover/media_18d86248e8c6c00f18e7461e58ee5291a8485f45f.png?width=400&format=png&optimize=medium",
-    //         "year": 2020,
-    //         "available": 1,
-    //         "author_id": 1,
-    //         "created_at": "2022-09-30T02:34:40.000000Z",
-    //         "updated_at": "2022-09-30T02:34:40.000000Z"
-    //     },
-    //     {
-    //         "id": 5,
-    //         "title": "Souron's Eye Sequel Sequel",
-    //         "description": "texto descriptivo de the eye of sauron",
-    //         "url": "https://www.researchgate.net/publication/334836566/figure/fig2/AS:787100425261056@1564670773357/Portada-del-libro-Origen-de-la-Vida-y-del-Hombre-publicado-por-la-BAC-en-1963.ppm",
-    //         "year": 2021,
-    //         "available": 1,
-    //         "author_id": 1,
-    //         "created_at": "2022-09-30T02:34:49.000000Z",
-    //         "updated_at": "2022-09-30T02:34:49.000000Z"
-    //     },
-    //     {
-    //         "id": 6,
-    //         "title": "It Latino",
-    //         "description": "texto descriptivo de the eye of sauron",
-    //         "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/PORTADA_LIBRO_EL_FIN_DESDE_EL_PRINCIPIO.jpg",
-    //         "year": 2019,
-    //         "available": 0,
-    //         "author_id": 3,
-    //         "created_at": "2022-09-30T02:36:04.000000Z",
-    //         "updated_at": "2022-09-30T02:36:04.000000Z"
-    //     },
-    //     {
-    //         "id": 7,
-    //         "title": "It Latino Pandora",
-    //         "description": "texto descriptivo de the eye of sauron",
-    //         "url": "https://s-media-cache-ak0.pinimg.com/originals/23/64/31/23643180b97ce3b3129e8ea096fc8a79.jpg",
-    //         "year": 2020,
-    //         "available": 0,
-    //         "author_id": 3,
-    //         "created_at": "2022-09-30T02:36:23.000000Z",
-    //         "updated_at": "2022-09-30T02:36:23.000000Z"
-    //     },
-    //     {
-    //         "id": 8,
-    //         "title": "Ayuda al Exito",
-    //         "description": "texto descriptivo de Ayuda al Exito",
-    //         "url": "https://edit.org/photos/img/blog/ppe-crear-portadas-de-libros-online.jpg-840.jpg",
-    //         "year": 2012,
-    //         "available": 1,
-    //         "author_id": 5,
-    //         "created_at": "2022-09-30T02:37:00.000000Z",
-    //         "updated_at": "2022-09-30T02:37:00.000000Z"
-    //     },
-    //     {
-    //         "id": 9,
-    //         "title": "El Cosmos",
-    //         "description": "texto descriptivo del Cosmos",
-    //         "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxrl4TzpYVbsE4pmLbDzm1ctjr95---1pR_Q&usqp=CAU",
-    //         "year": 2015,
-    //         "available": 1,
-    //         "author_id": 4,
-    //         "created_at": "2022-09-30T02:37:21.000000Z",
-    //         "updated_at": "2022-09-30T02:37:21.000000Z"
-    //     },
-    //     {
-    //         "id": 10,
-    //         "title": "El Cosmos y Las Estrellas",
-    //         "description": "texto descriptivo del Cosmos",
-    //         "url": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1623078210-la-naranja-mecanica-anthony-burgess-201505261226.jpg?crop=1xw:1xh;center,top&resize=480:*",
-    //         "year": 2017,
-    //         "available": 1,
-    //         "author_id": 4,
-    //         "created_at": "2022-09-30T02:37:37.000000Z",
-    //         "updated_at": "2022-09-30T02:37:37.000000Z"
-    //     }
-    // ]
+    const data = {
+        "id": 1,
+        "title": "The text",
+        "description": "texto descriptivo de the wanderer",
+        "url": "https://edit.org/images/cat/portadas-libros-big-2019101610.jpg",
+        "year": 2022,
+        "available": 1,
+        "author_id": 1,
+        "created_at": "2022-09-30T02:32:48.000000Z",
+        "updated_at": "2022-09-30T03:47:54.000000Z"
+    }
+
+    const location = useLocation()
+    const bookLocation = location.pathname.split("/")[2];
+    const replace = /,/g
+
+    const bookId = bookLocation.replace(replace, ':')
 
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
@@ -125,7 +31,7 @@ const Book = () => {
     const [available, setAvailable] = useState(0);
 
     const handleClick = () => {
-        console.log(title, desc, url, year, autor, available)
+        console.log(title, desc, url, year, autor, available, bookId)
     }
 
     return (
@@ -191,7 +97,19 @@ const Book = () => {
                 </div>
             </div>
             <div className='infoContainerBook'>
-                Hola 2
+                <img src={data.url} className="imageUpdate"/>
+                <h1>
+                    {data.title}
+                </h1>
+                <h4>
+                    {data.year}
+                </h4>
+                <h3>
+                    {data.author_id}
+                </h3>
+                <h2>
+                    {data.description}
+                </h2>
             </div>
         </div>
     )

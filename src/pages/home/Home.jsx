@@ -123,7 +123,6 @@ const data = [
     }
 ]
 
-
 const Home = () => {
 
     const navigate = useNavigate()

@@ -15,7 +15,6 @@
 
 .updateContainerBook {
     width: 70%;
-    height: 100vh;
     /* background-color: green; */
     text-align: center;
 }
@@ -26,8 +25,8 @@
 }
 
 .infoContainerBook {
+    height: auto;
     width: 30%;
-    height: 100vh;
     padding: 30px;
     border: rgb(0, 0, 0) solid 1px;
     border-radius: 2%;
@@ -101,4 +100,8 @@
 .button-28:active {
     box-shadow: none;
     transform: translateY(0);
+}
+
+.imageUpdate{
+    width: 100%;
 }
